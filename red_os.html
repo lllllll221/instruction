@@ -15,11 +15,44 @@
         <p>Здесь вы найдете инструкции и советы по работе с Red OS, которые помогут вам преодолеть любые трудности.</p>
         <details>
             <summary>Тирринг экрана</summary>
-            <p>Раскрывающийся текст</p>
+            <p>Все просто:</p>
+            <ol>
+                <li>Открыть файл <term>grub</term>:</li>
+                <pre><code>
+sudo nano /etc/defaul/grub
+                </code></pre>
+                <li>Добавить параметры <term>i915.enable_dc=0 intel_idle.max_cstate=2</term> в конец строки <term>GRUB_CMDLINE_LINUX</term>, как должна выглядеть строка после изменений:</li>
+                <pre><code>
+GRUB_CMDLINE_LINUX="... i915.enable_dc=0 intel_idle.max_cstate=2"
+                </code></pre>
+                <p><b>Ничего удалять не надо!!! ТОЛЬКО ДОБАВИТЬ!!!</b></p>
+                <p>Сохраняем изменения <term>Ctrl+O</term> и выходим <term>Ctrl + X</term>.</p>
+                <li>После обновляем <term>grub</term> командой в терминале:</li>
+                <pre><code>
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+                </code></pre>
+                <li>Перезапускаем комп и радуемся жизни.</li>
+            </ol>
         </details>
-        <details>
+        <details open>
             <summary>Вывод изображения</summary>
-            <p>Раскрывающийся текст</p>
+            <ol>
+                <li>Открываем от root пользователя для редактирования файл <term>/etc/default/grub</term></li>
+                <pre><code>
+sudo nano /etc/default/grub
+                </code></pre>
+                <li>Добавить параметры <term>video=eDP-1:d</term> в конец строки <term>GRUB_CMDLINE_LINUX</term>, как должна выглядеть строка после изменений:</li>
+                <pre><code>
+GRUB_CMDLINE_LINUX="... video=eDP-1:d"
+                </code></pre>
+                <p><b>Ничего удалять не надо!!! ТОЛЬКО ДОБАВИТЬ!!!</b></p>
+                <p>Сохраняем изменения <term>Ctrl+O</term> и выходим <term>Ctrl + X</term>.</p>
+                <li>После обновляем <term>grub</term> командой в терминале:</li>
+                <pre><code>
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+                </code></pre>
+                <li>Перезапускаем комп и радуемся жизни.</li>
+            </ol>
         </details>
     </main>
     <footer>

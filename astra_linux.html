@@ -27,11 +27,12 @@
                 <pre><code>
 sudo nano /etc/defaul/grub
                 </code></pre>
-                <li>Добавить параметр <term>i915.disable_drrs=1</term> в конец строки <term>GRUB_CMDLINE_LINUX_DEFAULT, как должна выглядеть строка после изменений:</term></li>
+                <li>Добавить параметр <term>i915.disable_drrs=1</term> в конец строки <term>GRUB_CMDLINE_LINUX_DEFAULT</term>, как должна выглядеть строка после изменений:</li>
                 <pre><code>
 GRUB_CMDLINE_LINUX_DEFAULT="... i915.disable_drrs=1"
                 </code></pre>
                 <p><b>Ничего удалять не надо!!! ТОЛЬКО ДОБАВИТЬ!!!</b></p>
+                <p>Сохраняем изменения <term>Ctrl+O</term> и выходим <term>Ctrl + X</term>.</p>
                 <li>После обновляем <term>grub</term> командой в терминале:</li>
                 <pre><code>
 sudo update-grub
