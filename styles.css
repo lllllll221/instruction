@@ -21,9 +21,11 @@ footer {
     width: 100%;
 }
 a {
-    color: #00FF00;
+    color: #c58af9; /* Замените #ff0000 на нужный вам цвет */
     text-decoration: none;
 }
+
 a:hover {
+    color: #c58af9; /* Цвет при наведении, измените при необходимости */
     text-decoration: underline;
 }
