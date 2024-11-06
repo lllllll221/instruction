@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astra Linux - Портал Решений</title>
+    <title>Astra Linux</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,6 +13,49 @@
     <main>
         <p>Добро пожаловать на страницу, посвященную исправлению ошибок и решению проблем с Astra Linux.</p>
         <p>Здесь вы найдете инструкции и советы по работе с Astra Linux, которые помогут вам справиться с любыми затруднениями.</p>
+        <details>
+            <summary>Тирринг экрана</summary>
+            <p>Лечение существует на:</p>
+            <ul>
+                <li>Astra linux SE 1.7.5 ядро 5.15</li>
+                <li>Astra linux SE 1.7.6 ядро 5.15</li>
+                <li>Astra linux SE 1.8.1 ядро 6.1</li>
+            </ul>
+            <p>Везде оно одинаковое:</p>
+            <ol>
+                <li>Открыть файл <term>grub</term>:</li>
+                <pre><code>
+sudo nano /etc/defaul/grub
+                </code></pre>
+                <li>Добавить параметр <term>i915.disable_drrs=1</term> в конец строки <term>GRUB_CMDLINE_LINUX_DEFAULT, как должна выглядеть строка после изменений:</term></li>
+                <pre><code>
+GRUB_CMDLINE_LINUX_DEFAULT="... i915.disable_drrs=1"
+                </code></pre>
+                <p><b>Ничего удалять не надо!!! ТОЛЬКО ДОБАВИТЬ!!!</b></p>
+                <li>После обновляем <term>grub</term> командой в терминале:</li>
+                <pre><code>
+sudo update-grub
+                </code></pre>
+                <li>Перезапускаем комп и радуемся жизни.</li>
+            </ol>
+        </details>
+
+        <details>
+            <summary>Не правильная скорость ethernet</summary>
+            <p>Лечится с помощью команды в терминале:</p>
+            <pre><code>
+sudo ethtool "имя_интерфейса" speed "нужная_скорость" duplex full
+            </code></pre>
+            <p>Узнать название интерфейса, который нужно изменить, можно использовать команду в терминале:</p>
+            <pre><code>
+ip a
+            </code></pre>
+            <p>Работает только на проводном соединении.</p>
+            <p>Доступные скорости так же можно посмотреть с помощью утилиты <term>ethtool</term></p>
+            <pre><code>
+sudo ethtool "имя_интерфейса"
+            </code></pre>
+        </details>
     </main>
     <footer>
         <p><a href="index.html">Вернуться на главную страницу</a></p>

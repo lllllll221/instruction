@@ -1,31 +1,61 @@
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     background-color: #000;
     color: #00FF00;
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
-    padding: 0;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     text-align: center;
+    padding: 20px;
 }
+
 main {
+    flex-grow: 1; /* Основное содержимое занимает оставшееся пространство */
     text-align: left;
-    padding-right: 20px;
+    padding: 20px;
 }
+
 footer {
     padding: 20px;
     border-top: 1px solid #00FF00;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: #000;
+    text-align: center;
+    color: #00FF00;
 }
+
 a {
-    color: #c58af9; /* Замените #ff0000 на нужный вам цвет */
+    color: #c58af9;
     text-decoration: none;
 }
 
 a:hover {
-    color: #c58af9; /* Цвет при наведении, измените при необходимости */
     text-decoration: underline;
+}
+
+pre {
+    background-color: #696969;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    color: #00FF00;
+}
+
+code {
+    color: #9ACD32;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+}
+
+term {
+    font-family: Consolas, "Courier New", monospace;
 }
